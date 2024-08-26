@@ -32,7 +32,7 @@ func (h *BookHandlers) GetBooks(w http.ResponseWriter, r *http.Request) {
 }
 
 /**
- * @api {post} /book Create book
+ * @api {post} /books Create book
  * @apiName CreateBook
  * @apiGroup Books
  */
@@ -54,7 +54,7 @@ func (h *BookHandlers) CreateBook(w http.ResponseWriter, r *http.Request) {
 }
 
 /**
- * @api {get} /book/:id Get book by id
+ * @api {get} /books/:id Get book by id
  * @apiName GetBook
  * @apiGroup Books
  */
@@ -82,7 +82,7 @@ func (h *BookHandlers) GetBook(w http.ResponseWriter, r *http.Request) {
 }
 
 /**
- * @api {put} /book/:id Update book
+ * @api {put} /books/:id Update book
  * @apiName UpdateBook
  * @apiGroup Books
  */
@@ -110,7 +110,7 @@ func (h *BookHandlers) UpdateBook(w http.ResponseWriter, r *http.Request) {
 }
 
 /**
- * @api {delete} /book/:id Delete book
+ * @api {delete} /books/:id Delete book
  * @apiName DeleteBook
  * @apiGroup Books
  */
