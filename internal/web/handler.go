@@ -12,9 +12,7 @@ type BookHandlers struct {
 }
 
 func NewBookHandlers(bookService *service.BookService) *BookHandlers {
-	return &BookHandlers{
-		bookService: bookService,
-	}
+	return &BookHandlers{bookService: bookService}
 }
 
 /**
@@ -25,7 +23,7 @@ func NewBookHandlers(bookService *service.BookService) *BookHandlers {
 func (h *BookHandlers) GetBooks(w http.ResponseWriter, r *http.Request) {
 	books, err := h.bookService.GetFullBook()
 	if err != nil {
-		http.Error(w, "Failed to get books", http.StatusInternalServerError)
+		http.Error(w, "Failed to get books: "+err.Error(), http.StatusInternalServerError)
 		return
 	}
 
@@ -34,7 +32,7 @@ func (h *BookHandlers) GetBooks(w http.ResponseWriter, r *http.Request) {
 }
 
 /**
- * @api {post} /books Create book
+ * @api {post} /book Create book
  * @apiName CreateBook
  * @apiGroup Books
  */
@@ -42,7 +40,7 @@ func (h *BookHandlers) CreateBook(w http.ResponseWriter, r *http.Request) {
 	var book service.Book
 	err := json.NewDecoder(r.Body).Decode(&book)
 	if err != nil {
-		http.Error(w, "INvalid request payload", http.StatusBadRequest)
+		http.Error(w, "Invalid request payload", http.StatusBadRequest)
 		return
 	}
 
@@ -56,7 +54,7 @@ func (h *BookHandlers) CreateBook(w http.ResponseWriter, r *http.Request) {
 }
 
 /**
- * @api {get} /books/:id Get book by id
+ * @api {get} /book/:id Get book by id
  * @apiName GetBook
  * @apiGroup Books
  */
@@ -84,7 +82,7 @@ func (h *BookHandlers) GetBook(w http.ResponseWriter, r *http.Request) {
 }
 
 /**
- * @api {put} /books/:id Update book
+ * @api {put} /book/:id Update book
  * @apiName UpdateBook
  * @apiGroup Books
  */
@@ -112,7 +110,7 @@ func (h *BookHandlers) UpdateBook(w http.ResponseWriter, r *http.Request) {
 }
 
 /**
- * @api {delete} /books/:id Delete book
+ * @api {delete} /book/:id Delete book
  * @apiName DeleteBook
  * @apiGroup Books
  */

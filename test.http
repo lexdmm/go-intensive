@@ -1,0 +1,26 @@
+### Get all books
+GET http://localhost:8083/books
+Content-Type: application/json
+
+### Create book
+POST http://localhost:8083/book
+Content-Type: application/json
+
+{
+  "title": "Lord of Rings",
+  "author": "J.R.R Tolkien",
+  "genre": "Fantasy"
+}
+
+### Update book
+PUT http://localhost:8083/book/1
+Content-Type: application/json
+
+{
+  "title": "Lord of Rings",
+  "author": "J.R.R Tolkien",
+  "genre": "Fantasy"
+}
+
+### Delete book
+DELETE http://localhost:8083/book/1

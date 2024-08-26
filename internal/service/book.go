@@ -23,8 +23,8 @@ func (s *BookService) CreateBook(book *Book) error {
 
 	if err != nil {
 		return err
-
 	}
+
 	lastInsertID, err := result.LastInsertId()
 	if err != nil {
 		return err
