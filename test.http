@@ -7,9 +7,9 @@ POST http://localhost:8083/books
 Content-Type: application/json
 
 {
-  "title": "Lord of Rings",
-  "author": "J.R.R Tolkien",
-  "genre": "Fantasy"
+  "title": "Livro Full Stack",
+  "author": "Fulano de tal",
+  "genre": "Tecnologia"
 }
 
 ### Update book
