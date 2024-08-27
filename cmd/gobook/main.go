@@ -9,6 +9,12 @@ import (
 	_ "github.com/mattn/go-sqlite3"
 )
 
+// main is the entry point of the Go program.
+//
+// It initializes a SQLite database, sets up a book service and handlers,
+// and starts an HTTP server to handle book-related requests.
+// No parameters.
+// No return values.
 func main() {
 	db, err := sql.Open("sqlite3", "./books.db")
 	if err != nil {
