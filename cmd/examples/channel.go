@@ -5,17 +5,17 @@ import (
 	"time"
 )
 
-func counter(n int) {
-	for i := range n {
-		fmt.Println(i)
-		time.Sleep(time.Second)
-	}
-}
-
 /**
  * Thread example
  * Problem: In this example we are competing for memory space
- */
+//  */
+// func counter(n int) {
+// 	for i := range n {
+// 		fmt.Println(i)
+// 		time.Sleep(time.Second)
+// 	}
+// }
+
 // func main() {
 // 	go counter(5)
 // 	go counter(5)
